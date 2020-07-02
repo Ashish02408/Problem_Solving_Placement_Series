@@ -1,0 +1,17 @@
+n = int(input("enter no of rows:"))
+List=[]
+for i in range(n):
+    l1=[]                       #temp list
+    for j in range(i+1):         #col
+        if j==0 or j==i:
+            l1.append(1)
+        else:
+            l1.append(List[i-1][j-1]+List[i-1][j])
+    List.append(l1)
+print(List)
+for i in range(n):
+    for j in range(n-i-1):
+        print(" ",end="")
+    for j in range(i+1):
+        print(List[i][j],end=" ")
+    print()
