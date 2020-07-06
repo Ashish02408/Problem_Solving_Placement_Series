@@ -1,0 +1,32 @@
+# Your task is to complete this function
+
+'''
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+'''
+
+# This function should rotate list counter-
+# clockwise by k and return head node
+def rotateList(head, k):
+    len=0
+    node=head
+    while(node.next!=None):
+        len+=1
+        node=node.next
+    node.next=head
+    for i in range(0,k):
+        head=head.next
+    node=head
+    for i in range(0,len):
+        node=node.next
+    node.next=None
+    return head
+    # code here
+
+
+
+
