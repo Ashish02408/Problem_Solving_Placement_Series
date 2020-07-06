@@ -1,0 +1,33 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def isPalindrome(self, head: ListNode) -> bool:
+        def reverse(head):
+            curr = head
+            prev = None
+            while(curr):
+                next = curr.next
+                curr.next = prev
+                prev = curr
+                curr = next
+            return prev
+        if head is None:
+            return True
+        fast,slow=head,head
+        while(fast and fast.next):
+            slow=slow.next
+            fast=fast.next.next
+        fast=head
+        slow=reverse(slow)
+        while(slow):
+            if(slow.val!=fast.val):
+                return False
+            slow=slow.next
+            fast=fast.next
+        return True
+        
+    
+        
