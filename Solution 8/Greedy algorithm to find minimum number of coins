@@ -1,0 +1,22 @@
+# Hello World program in Python
+    
+def chain(v):
+    
+    d=[1,2,5,10,20,50,100,200,500,2000]
+    n=len(d)
+    r=[]
+    i=n-1
+    while(i>=0):
+        while(v>=d[i]):
+            v=v-d[i]
+            r.append(d[i])
+        i-=1
+    for i in range(len(r)):
+        print(r[i])
+if __name__ == '__main__': 
+    n=93
+    chain(n)
+    
+
+
+#code
